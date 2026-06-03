@@ -35,7 +35,7 @@ def call_api(messages):
         "temperature": 0.8
     }
     try:
-        resp = requests.post(API_URL, headers=headers, json=post_data, timeout=30)
+        resp = requests.post(API_URL, headers=headers, json=post_data, timeout=90)
         resp.raise_for_status()
         res_json = resp.json()
         return res_json["choices"][0]["message"]["content"]
